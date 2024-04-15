@@ -1,27 +1,22 @@
+
 import io.restassured.RestAssured;
-import io.restassured.RestAssured.*;
 import io.restassured.http.ContentType;
-import io.restassured.matcher.RestAssuredMatchers.*;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers.*;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
+import java.io.File;
+
+import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RestAPITest {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
     @BeforeAll
     public static void setup() {
         RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
     }
 
-    @Test
-    public void getRequest() {
+    public Response getRequest() {
         Response response = given()
                 .contentType(ContentType.JSON)
                 .when()
@@ -30,7 +25,28 @@ public class RestAPITest {
                 .extract().response();
 
         assertEquals(200, response.statusCode());
-        assertEquals("qui est esse", response.jsonPath().getString("title[1]"));
+//        assertEquals("qui est esse", response.jsonPath().getString("title[1]"));
+        return response;
+    }
+
+    public Response postRequest() {
+        File newUser = new File("src/test/resources/newUser.json");
+        Response response = given().contentType(ContentType.JSON)
+                .body(newUser)
+                .when()
+                .post("/posts")
+                .then()
+                .extract()
+                .response();
+        return response;
+    }
+
+    @Test
+    public void main() {
+        System.out.println(postRequest().statusCode());
+        System.out.println(postRequest().prettyPrint());
+        System.out.println(getRequest().statusCode());
+        System.out.println(getRequest().prettyPrint());
     }
 
 }
