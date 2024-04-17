@@ -6,10 +6,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/Features/getAPI.feature", // Path to your feature files
+        features = "src/test/resources/Features/getAPI.feature", // Path to your feature files
         glue = "steps", // Package where your step definitions are located
         dryRun = true,
-        tags = "@createUserPOST"
+        tags = "@createUserPOST",
+        plugin = {"pretty", "html:target/cucumber-pretty",
+                "json:target/cucumber.json"}
 )
 
 public class Run {
