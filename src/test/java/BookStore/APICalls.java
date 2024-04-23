@@ -1,5 +1,6 @@
 package BookStore;
 
+import BookStore.POJO.CreateUserRequest;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -18,13 +19,19 @@ public class APICalls {
         RestAssured.baseURI = "https://bookstore.toolsqa.com/";
     }
 
-    public Response createNewUser() {
+    public Response createNewUser(CreateUserRequest createUserRequest) {
         System.out.println("Calling POST request to Create a new user");
-        File newUser = new File("src/test/resources/BookstoreUserData.json");
+//        We can send request body as File or string or POJO class - here i have used POJO
+//        File newUser = new File("src/test/resources/BookstoreUserData.json");
+//        String reqBody = "{\n" +
+//               "  \"userName\": \"Megha\",\n" +
+//               "  \"password\": \"Megha@123\"\n" +
+//               "}";
+
 
         Response response = given()
                 .header("Content-type", "application/json")
-                .body(newUser)
+                .body(createUserRequest)
                 .when()
                 .post("/Account/v1/User")
                 .then()
@@ -53,6 +60,7 @@ public class APICalls {
     }
 
     public Response generateAuthToken() {
+//        For Generate token post call we dont use POJO we are using File as body
         System.out.println("Generating Authorisation token for User");
         File userData = new File("src/test/resources/BookstoreUserData.json");
         Response response = given()

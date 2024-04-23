@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Features/getAPI.feature", // Path to your feature files
+        features = "src/test/resources/Features/user.feature", // Path to your feature files
         glue = "steps", // Package where your step definitions are located
         dryRun = true,
         tags = "@createUserAndDelete",

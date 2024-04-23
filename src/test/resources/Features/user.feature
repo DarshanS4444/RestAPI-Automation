@@ -1,4 +1,4 @@
-Feature: Rest Assured API Automation
+Feature: Create/Delete User to Bookstore
 
   @createUserAndDelete
   Scenario: Create User

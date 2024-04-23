@@ -1,5 +1,6 @@
 package BookStore;
 
+import BookStore.POJO.CreateUserResponse;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import utils.ThreadLocalContext;
@@ -9,9 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class Validations {
-    public void verifyNewUserCreated(Response response) {
+    public void verifyNewUserCreated(CreateUserResponse createUserResponse) {
+//      Response validation can be done using response object and POJO class of response too
         System.out.println("Validating user created using User ID");
-        String userID = response.jsonPath().getString("userID");
+
+//      String userID = response.jsonPath().getString("userID");
+        String userID = createUserResponse.getUserID();
         System.out.println("User ID created : " + userID);
         ThreadLocalContext.set("UUID", userID);
         assertNotNull(userID, "UserID is null : " + userID);

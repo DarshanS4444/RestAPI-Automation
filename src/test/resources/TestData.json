@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "Komal",
+      "password": "Komal@123"
+    },
+    {
+      "username": "Miqdam",
+      "password": "Miqdam@123"
+    },
+    {
+      "username": "Lavanya",
+      "password": "Lavanya@123"
+    }
+  ],
+  "urls": {
+    "bookStoreURL": "http://example.com",
+    "login": "http://example.com/login"
+  }
+}
