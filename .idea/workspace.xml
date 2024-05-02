@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be8ff97a-f747-4ece-9254-b7e126c67b3f" name="Changes" comment="Added Testdata and test data manager &#10;Implemented POJO classes for create user post call">
-      <change afterPath="$PROJECT_DIR$/src/test/java/BookStore/Methods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Hooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Books.json" afterDir="false" />
+    <list default="true" id="be8ff97a-f747-4ece-9254-b7e126c67b3f" name="Changes" comment="Added adding book to user's cart from bookstore feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BookStore/APICalls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookStore/APICalls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookStore/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookStore/Methods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/MySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/MySteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/BookstoreUserData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/BookstoreUserData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Hooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/Features/books.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/books.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +78,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Add books from bookstore to User cart">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Update ISBN value of user's book">
     <configuration name="EarlierAndLaterOccurrences" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BookStore.EarlierAndLaterOccurrences" />
       <module name="Automation_DS" />
@@ -130,26 +125,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Create User (2)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/user.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Automation_DS" />
-      <option name="NAME_FILTER" value="^Create User$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Create User$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Create User" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Scenario: Get list of books and Store" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/books.feature" />
@@ -170,13 +145,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: Update ISBN value of user's book" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/books.feature" />
+      <option name="GLUE" value="utils steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Automation_DS" />
+      <option name="NAME_FILTER" value="^Update ISBN value of user\'s book$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Update ISBN value of user\'s book$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Update ISBN value of user's book" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Update ISBN value of user's book" />
         <item itemvalue="Cucumber Java.Scenario: Add books from bookstore to User cart" />
         <item itemvalue="Cucumber Java.Scenario: Get list of books and Store" />
         <item itemvalue="Application.UniqueDecimalRepresentations" />
         <item itemvalue="Application.EarlierAndLaterOccurrences" />
-        <item itemvalue="Cucumber Java.Scenario: Create User (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713879865427</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added adding book to user's cart from bookstore feature">
+      <option name="closed" value="true" />
+      <created>1714646187497</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714646187497</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -229,6 +232,7 @@
     <MESSAGE value="updated pom and test data files" />
     <MESSAGE value="Completed User addition flow" />
     <MESSAGE value="Added Testdata and test data manager &#10;Implemented POJO classes for create user post call" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Testdata and test data manager &#10;Implemented POJO classes for create user post call" />
+    <MESSAGE value="Added adding book to user's cart from bookstore feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added adding book to user's cart from bookstore feature" />
   </component>
 </project>

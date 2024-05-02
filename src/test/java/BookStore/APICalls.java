@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import org.json.JSONArray;
 import utils.ThreadLocalContext;
 import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -148,6 +149,38 @@ public class APICalls {
                 .extract().response();
         response.prettyPrint();
         assertEquals(200, response.statusCode(), "Status code mismatch");
+        return response;
+    }
+
+    public Response updateISBN(String userID, String booksPath) throws FileNotFoundException {
+        System.out.println("Updating ISBN value of book");
+
+        JSONObject jsonObject = new JSONObject(Methods.readJsonFile(booksPath));
+        JSONArray books = jsonObject.getJSONArray("books");
+        String newISBN = books.getJSONObject(6).getString("isbn");
+        System.out.println("New ISBN : " + newISBN);
+        ThreadLocalContext.set("isbn", newISBN);
+
+        JSONArray booksArray = new JSONArray(getBookStoreUserInfo(userID).jsonPath().getList("books"));
+        String oldISBN = booksArray.getJSONObject(0).get("isbn").toString();
+        System.out.println("Old ISBN : " + oldISBN);
+
+        String updateISBNRequest = "{\n" +
+                "  \"userId\": \"%s\",\n" +
+                "  \"isbn\": \"%s\"\n" +
+                "}";
+
+        Response response = given()
+                .header("Content-type", "application/json")
+                .header("Authorization", "Bearer " + ThreadLocalContext.get("authToken"))
+                .pathParam("ISBN", oldISBN)
+                .body(String.format(updateISBNRequest, userID, newISBN))
+                .when()
+                .put("/BookStore/v1/Books/{ISBN}")
+                .then()
+                .extract().response();
+
+        assertEquals(200, response.statusCode(), "Status Code Mismatch");
         return response;
     }
 }

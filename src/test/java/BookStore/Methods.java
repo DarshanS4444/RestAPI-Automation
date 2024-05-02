@@ -55,4 +55,15 @@ public class Methods {
         }
         assertTrue(bookAddedToCart, String.format("Added book with isbn : %s not present", isbn));
     }
+
+    public void verifyISBNUpdated(Response response, Object newISBN) {
+        System.out.println("Verifying ISBN value is updated");
+        List<Object> booksList = response.jsonPath().getList("books");
+        JSONArray jsonArray = new JSONArray(booksList);
+        assertFalse(jsonArray.isEmpty());
+
+        String updatedISBN = jsonArray.getJSONObject(0).get("isbn").toString();
+        System.out.println("Updated ISBN : " + updatedISBN);
+        assertEquals(updatedISBN, newISBN, "ISBN value is not updated ");
+    }
 }

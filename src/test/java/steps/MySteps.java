@@ -118,4 +118,16 @@ public class MySteps {
     public void iClearUserCart() {
         new APICalls().clearUserCart(ThreadLocalContext.get("userId"));
     }
+
+    @Given("I update ISBN value of a book")
+    public void iUpdateISBNValueOfABook() throws IOException {
+        Map<String, Object> testData = TestDataLoader.loadTestData("src/test/resources/TestData.json");
+        Map<String, Object> bookStoreUserData = (Map<String, Object>) testData.get("bookStoreUserData");
+        response = new APICalls().updateISBN(bookStoreUserData.get("userID").toString(), "src/test/resources/Books.json");
+    }
+
+    @Then("I verify ISBN is updated")
+    public void iVerifyISBNIsUpdated() throws IOException {
+        new Methods().verifyISBNUpdated(response, ThreadLocalContext.get("isbn"));
+    }
 }

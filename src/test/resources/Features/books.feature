@@ -13,3 +13,8 @@ Feature: Store/Add/Delete/Edit books to Bookstore
     And I clear user cart
     When I add a book to user cart
     Then I verify book is added to user book list
+
+  @UpdateISBN
+  Scenario: Update ISBN value of user's book
+    Given I update ISBN value of a book
+    Then I verify ISBN is updated
