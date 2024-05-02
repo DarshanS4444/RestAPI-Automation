@@ -1,6 +1,7 @@
 package steps;
 
 import BookStore.APICalls;
+import BookStore.Methods;
 import BookStore.POJO.CreateUserRequest;
 import BookStore.POJO.CreateUserResponse;
 import BookStore.Validations;
@@ -81,5 +82,40 @@ public class MySteps {
     @And("I verify user is not authorised")
     public void iVerifyUserIsNotAuthorised() {
         new Validations().verifyUserIsNotAuthorised(response);
+    }
+
+    @Given("I get list of books in Bookstore")
+    public void iGetListOfBooksInBookstore() {
+        response = new APICalls().getListOfBooks();
+    }
+
+    @Then("I store the list of books")
+    public void iStoreTheListOfBooks() {
+        new Methods().storeBooks(response, "src/test/resources/Books.json");
+    }
+
+    @Given("I add a book to user cart")
+    public void iAddABookToUserCart() throws IOException {
+        Map<String, Object> testData = TestDataLoader.loadTestData("src/test/resources/TestData.json");
+        Map<String, Object> bookStoreUserData = (Map<String, Object>) testData.get("bookStoreUserData");
+        response = new APICalls().addBookToCart(bookStoreUserData.get("userID").toString(), "src/test/resources/Books.json");
+    }
+
+    @Then("I verify book is added to user book list")
+    public void iVerifyBookIsAddedToUserBookList() {
+        response = new APICalls().getBookStoreUserInfo(ThreadLocalContext.get("userId"));
+        new Methods().verifyBookIsAddedToCart(response, ThreadLocalContext.get("isbn").toString());
+    }
+
+    @And("I verify given book already exists in users cart")
+    public void iVerifyGivenBookAlreadyExistsInUsersCart() throws IOException {
+        Map<String, Object> testData = TestDataLoader.loadTestData("src/test/resources/TestData.json");
+        new Methods().verifyResponseMessage(testData.get("isbnDuplicateErrorMessage").toString()
+                , response.jsonPath().getString("message"));
+    }
+
+    @And("I clear user cart")
+    public void iClearUserCart() {
+        new APICalls().clearUserCart(ThreadLocalContext.get("userId"));
     }
 }

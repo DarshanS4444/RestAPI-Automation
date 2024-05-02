@@ -6,10 +6,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Features/user.feature", // Path to your feature files
+        features = {"src/test/resources/Features/user.feature", "src/test/resources/Features/books.feature"},// Path to your feature files
         glue = "steps", // Package where your step definitions are located
         dryRun = true,
-        tags = "@createUserAndDelete",
+        tags = "@createUserAndDelete or @StoreBookList",
         plugin = {"pretty", "html:target/cucumber-pretty",
                 "json:target/cucumber.json"}
 )
