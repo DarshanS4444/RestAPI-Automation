@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be8ff97a-f747-4ece-9254-b7e126c67b3f" name="Changes" comment="Added adding book to user's cart from bookstore feature">
+    <list default="true" id="be8ff97a-f747-4ece-9254-b7e126c67b3f" name="Changes" comment="Added Update ISBN value of book feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BookStore/APICalls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookStore/APICalls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BookStore/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookStore/Methods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/MySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/MySteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/books.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/books.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714646187497</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Update ISBN value of book feature">
+      <option name="closed" value="true" />
+      <created>1714648440235</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714648440235</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -233,6 +238,7 @@
     <MESSAGE value="Completed User addition flow" />
     <MESSAGE value="Added Testdata and test data manager &#10;Implemented POJO classes for create user post call" />
     <MESSAGE value="Added adding book to user's cart from bookstore feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added adding book to user's cart from bookstore feature" />
+    <MESSAGE value="Added Update ISBN value of book feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Update ISBN value of book feature" />
   </component>
 </project>

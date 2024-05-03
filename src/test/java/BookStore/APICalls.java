@@ -179,7 +179,7 @@ public class APICalls {
                 .put("/BookStore/v1/Books/{ISBN}")
                 .then()
                 .extract().response();
-
+        response.prettyPrint();
         assertEquals(200, response.statusCode(), "Status Code Mismatch");
         return response;
     }
