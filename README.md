@@ -9,8 +9,9 @@ User Modification APIs -
     1. POST call to create a new user
     2. DELETE call to delete the user
     3. GET call to retrieve user data
+    4. PUT call to update user data
     
-Books APIs -
+Example Books APIs automated -
     
     1. GET call to get a list of books in bookstore
     2. POST call to add a book to user's cart
